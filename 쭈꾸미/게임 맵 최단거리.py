@@ -23,6 +23,7 @@ def bfs(x, y, N, M, maps, dx, dy):
             nx = x + dx[i]
             ny = y + dy[i]
 
+            #영역을 벗어나거나 벽을 만났을 경우
             if nx < 0 or ny < 0 or nx >= N or ny >= M:
                 continue
 
@@ -32,7 +33,7 @@ def bfs(x, y, N, M, maps, dx, dy):
             if maps[nx][ny] == 1:
                 maps[nx][ny] = maps[x][y] + 1
                 queue.append((nx, ny))
-            else:
+            else: #길을 만났을 때 최단거리 비교
                 if maps[nx][ny] > maps[x][y] + 1:
                     maps[nx][ny] = maps[x][y] + 1
                     queue.append((nx, ny))

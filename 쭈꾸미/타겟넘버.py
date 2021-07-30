@@ -1,18 +1,18 @@
 answer = 0
 
-def DFS(idx, numbers, target, value):
+def solution(numbers, target):
+    DFS(0, len(numbers), 0, target, numbers)
+    return answer
+
+def DFS(idx, count, res, t, numbers):
     global answer
-    N = len(numbers)
-    if (idx == N and value == target):
+
+    if res == t and idx == count:
         answer += 1
         return
-    if (idx == N):  # 끝마쳤으나 target넘버에 도착하지 못함
+
+    if idx == count:
         return
 
-    DFS(idx + 1, numbers, target, value + numbers[idx])
-    DFS(idx + 1, numbers, target, value - numbers[idx])
-
-def solution(numbers, target):
-    global answer
-    DFS(0, numbers, target, 0)
-    return answer
+    DFS(idx + 1, count, res + numbers[idx], t, numbers)
+    DFS(idx + 1, count, res - numbers[idx], t, numbers)
