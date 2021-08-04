@@ -1,5 +1,5 @@
 # answer를 전역 변수로 선언한다.
-answer = 0;
+answer = 0
 
 #dfs(깊이 우선 탐색 함수) 파라미터 (정점, numbers 그래프, target 목표 합, acc 합의 모든 경우의 수)
 def dfs(node, numbers, target, acc):
@@ -22,7 +22,7 @@ def dfs(node, numbers, target, acc):
   dfs(node+1, numbers, target, acc - numbers[node])
 
 #이를 통해 처음 5개 함수 
-#dfs(1,numbers, target, 1), dfs(2,numbers, target, 2), dfs(3,numbers, target, 3), dfs(4, numbers, target, 4), dfs(5, numbers, target, 5) 
+# dfs(1,numbers, target, 1), dfs(2,numbers, target, 2), dfs(3,numbers, target, 3), dfs(4, numbers, target, 4), dfs(5, numbers, target, 5) 
 # 호출된 것이 스택에서 종료되고 재귀하면서 각 단계 당 dfs(5,numbers, target, 3) 가 반복됨
 # 결과적으로 answer 변수는 1을 5번 축적하기 때문에 답은 5가 됩니다.
 
