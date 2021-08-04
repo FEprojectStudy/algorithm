@@ -2,7 +2,7 @@ function solution(progresses, speeds) {
   //초기 기능 개수(for문을 돌릴때 개수가 적어져 다 돌리지 못하는 경우가 발생하기 때문)
   const num = progresses.length;
   //각 날짜별 완성 기능 개수를 담는 array
-  const dayamount = [[]];
+  const dayamount = [];
   //초기 날짜
   let day = 1;
   //날짜를 제외한 기능개수만 담는 배열
@@ -27,8 +27,8 @@ function solution(progresses, speeds) {
       } else if ($progresses[0] >= 100) {
         $progresses.shift();
         $speeds.shift();
-      //그 날짜에 아무 기능도 없다면, 새로 만들고 기존에 존재한다면 개수를 더함
-        if (dayamount[dayamount.length - 1][0] !== day) {
+      //완성된 날짜가 배열에 없다면, 새로 만들고 기존에 존재한다면 개수를 더함
+        if (!dayamount[dayamount.length - 1] || dayamount[dayamount.length - 1][0] !== day) {
           dayamount.push([day, 1]);
         } else if (dayamount[dayamount.length - 1][0] === day) {
           dayamount[dayamount.length - 1][1] += 1;
@@ -38,8 +38,7 @@ function solution(progresses, speeds) {
     //기능이 다 완성되지 않았을 경우 하루를 더함
     day += 1;
   }
-  //처음 배열이 []이므로 제외함([]을 넣지 않으면 undefind가 떠서 어쩔수 없이 넣음. 다른 방법이 있는지 고민중)
- dayamount.shift();
+
   //날짜별 완성 개수만 빼서 return
   for (let k = 0; k < dayamount.length; k++) {
     ans.push(dayamount[k][1]);
