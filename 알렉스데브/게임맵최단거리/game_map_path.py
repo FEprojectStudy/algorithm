@@ -1,11 +1,11 @@
 from collections import deque
-
 #최단거리 문제: 넓은 범위를 탐색해나가는 BFS 알고리즘 사용
 
 def solution(maps):
 
     # graph 변수에 이차원배열 maps를 저장
     graph = maps
+    
     # x의 directions 좌, 우 저장
     dx = [-1,1,0,0]
     # y의 directions 상, 하 저장
@@ -44,6 +44,7 @@ def solution(maps):
                 # nx, ny 좌표가 게임 맵을 벗어나는 경우 무시
                 if 0 > nx or nx > v or 0 > ny or ny > h:
                     continue
+
                 # 벽(0)을 만나는 경우에도 무시
                 if graph[nx][ny] == 0:
                     continue
@@ -55,6 +56,7 @@ def solution(maps):
 
                     #큐에 nx,ny 좌표를 apppend함
                     queue.append((nx,ny))
+
         return graph[h][v]
     answer = bfs(0, 0)
     if answer == 1:
