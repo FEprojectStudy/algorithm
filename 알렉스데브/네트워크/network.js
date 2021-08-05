@@ -17,16 +17,17 @@ function solution(n, computers) {
   let visited = Array(n).fill(false);
 
   // 모든 컴퓨터를 순회하며
-  for (let j = 0; j < n; j++) {
+
+  visited.forEach((element, i) => {
     //방문하지 않은 노드가 있는지 확인한다.
-    if (visited[j] === false) {
+    if (element === false) {
       //있다면 dfs 함수를 실행
-      dfs(n, computers, visited, j);
+      dfs(n, computers, visited, i);
 
       // 연결되지 않았으므로, 네트워크 개수는 1씩 늘어남
       answer++;
     }
-  }
+  });
   return answer;
 }
 
