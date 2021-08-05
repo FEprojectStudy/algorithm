@@ -33,7 +33,7 @@ def bfs(x, y, N, M, maps, dx, dy):
             if maps[nx][ny] == 1:
                 maps[nx][ny] = maps[x][y] + 1
                 queue.append((nx, ny))
-            else: #길을 만났을 때 최단거리 비교
+            else: #이미 지나간 길을 만났을 때 최단거리 비교
                 if maps[nx][ny] > maps[x][y] + 1:
                     maps[nx][ny] = maps[x][y] + 1
                     queue.append((nx, ny))
