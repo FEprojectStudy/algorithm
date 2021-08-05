@@ -13,12 +13,8 @@ function solution(n, computers) {
   let answer = 0;
 
   // 정점 방문 체크를 할 배열을 선언
-  let visited = [];
-
   // 컴퓨터의 개수 만큼 false로 초기화 한다. (아직 방문되지 않은 정점)
-  for (let i = 0; i < n; i++) {
-    visited.push(false);
-  }
+  let visited = Array(n).fill(false);
 
   // 모든 컴퓨터를 순회하며
   for (let j = 0; j < n; j++) {
