@@ -37,12 +37,19 @@ function solution(jobs) {
 
       // 새로운 작업이 도착하면
     } else {
+
+      // 우선 순위 큐 앞 작업을 빼서 저장
       const [start, work] = primary.shift();
+
+      // 현 작업 도착 시간에서 작업시간을 더하고 현재 작업 착수 시간을 뺀 값을 ansnwer에 누적
       answer += time + work - start;
+      
+      // 현 작업 도착 시간에는 작업 시간을 누적
       time += work;
     }
   }
-  return parseInt(answer / jobs.length);
+  // 작업 완료 시간을 작업수로 나눈 값을 반환
+  return Number(answer / jobs.length);
 }
 
 console.log(
