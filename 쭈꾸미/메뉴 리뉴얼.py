@@ -37,8 +37,9 @@ def solution(orders, course):
             elif dict[k] == max_val:
                 tmp.append(k)
 
-    for v in tmp:
-        answer.append(v)
+    else:
+        for v in tmp:
+            answer.append(v)
 
     return sorted(answer)
 
