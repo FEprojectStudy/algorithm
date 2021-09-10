@@ -29,13 +29,11 @@ def solution(numbers):
 
     # 가능한 경우의 수를 순열리스트로 만듦
     arr = list(permutations(numbers, i))
-
     # 순열 리스트의 인덱스 순회
     for j in range(len(arr)):
 
       # 경우의 수 순열을 num 변수 저장
       num = int(''.join(arr[j]))
-
       # 경우의 수가 소수라면
       if is_prime(num):
 
@@ -45,4 +43,4 @@ def solution(numbers):
   # answer 배열의 중복을 set 자료형으로 제거한 수, 길이를 반환
   return len(set(answer))
 
-print(solution('17'))
+print(solution('8484'))
