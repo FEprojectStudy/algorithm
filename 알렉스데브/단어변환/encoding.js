@@ -1,3 +1,8 @@
+//BFS 알고리즘 사용: 이미 확인한 단어는 방문처리하고 다음 단어와 비교하는 방식
+// queue에서 노드를 빼면 방문처리
+// words의 요소가 조건에 해당하면 큐에 넣는다.
+// 조건에 부합하는 정답을 반환
+
 function solution(begin, target, words) {
   let answer = 0;
   let visited = [];
@@ -14,7 +19,7 @@ function solution(begin, target, words) {
   // 큐가 비어있지 않은 동안
   while(queue) {
 
-    // 큐의 첫번째 값을 꺼낸다
+    // 큐의 첫번째 값을 꺼낸다 비슷한 단어의 경우, 변경 회수를 같이 대입
     let [vertex, count] = queue.shift();
 
     // 첫번째로 꺼낸 값이 target이라면 횟수를 return
