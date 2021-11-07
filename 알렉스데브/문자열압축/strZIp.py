@@ -3,7 +3,7 @@ def solution(s):
     # 처음 문자열의 길이
     answer = len(s)
     #  
-    for i in range(1, len(s)// 2 +1):
+    for i in range(1, (len(s)//2) +1):
       # 현재 탐색 위치
       cur = 0
       # 길이
@@ -23,7 +23,7 @@ def solution(s):
             # 같은 문자열을 찾으면 count 증가
             count += 1
             # 위치를 다음 위치로 진행
-            cur += 1 
+            cur += i 
           
           # 같은 패턴의 문자열이 없다면 탈출
           else:
@@ -44,6 +44,6 @@ def solution(s):
             l += 4
 
     # 초기 문자열과 압축 절차를 거친 문자열의 길이를 비교해서 최소값을 대입
-    answer = min(answer, l)
+      answer = min(answer, l)
 
     return answer

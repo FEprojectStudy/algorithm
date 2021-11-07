@@ -9,7 +9,7 @@ def solution(sizes):
       y = min(cards[i][0],cards[i][1])
       wallet_width = max(wallet_width, x)
       wallet_height = max(wallet_height, y)
-   
+      
     answer = wallet_width * wallet_height
 
     return answer
