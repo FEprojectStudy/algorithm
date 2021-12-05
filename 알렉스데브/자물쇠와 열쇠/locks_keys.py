@@ -20,7 +20,7 @@ def solution(key, lock):
   new_lock = [[0] * (N*3) for _ in range(N*3)]
 
   for i in range(N):
-    for j in range(M):
+    for j in range(N):
       new_lock[i+N][j+N] = lock[i][j]
 
   
@@ -40,4 +40,9 @@ def solution(key, lock):
             new_lock[x+i][y+j] -= key[i][j]
   return False
 
+solution([[0, 0, 0], [1, 0, 0], [0, 1, 1]], [[1, 1, 1], [1, 1, 0], [1, 0, 1]])
 
+
+[[0, 0, 0],
+ [1, 0, 0],
+  [0, 1, 1]]
